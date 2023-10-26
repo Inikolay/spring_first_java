@@ -12,10 +12,13 @@
     <bean id="musicBean"
           class="org.example.springjava.RapMusic">
     </bean>
+
     <bean id="musicPlayer"
-          class="org.example.springjava.MusicPlayer">
+          class="org.example.springjava.MusicPlayer" scope="prototype">
         <property name="music" ref="musicBean"/>
+
         <property name="name" value="${musicPlayer.name}"/>
         <property name="value" value="${musicPlayer.volume}"/>
+
     </bean>
 </beans>

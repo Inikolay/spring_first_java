@@ -6,19 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-    
-    <context:property-placeholder location="musicPlayer.properties"/>
 
-    <bean id="musicBean"
-          class="org.example.springjava.RapMusic">
-    </bean>
+    <context:component-scan base-package="org.example.springjava"/>
 
-    <bean id="musicPlayer"
-          class="org.example.springjava.MusicPlayer" scope="prototype">
-        <property name="music" ref="musicBean"/>
-
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="value" value="${musicPlayer.volume}"/>
-
-    </bean>
 </beans>
